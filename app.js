@@ -1,7 +1,13 @@
 const express = require('express');
+const dotenv= require('dotenv');
+const { connectDB } = require('./src/db');
+const { graphqlHTTP } = require('express-graphql');
+const schema = require('./src/graphql/schema');
 const path = require('path');
 const app = express();
-const port = 2000;
+dotenv.config();
+
+connectDB();
 
 const user = {
     firstName: 'Danni',

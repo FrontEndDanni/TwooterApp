@@ -1,0 +1,14 @@
+const { GraphQLSchema, GraphQLObjectType } = require('graphql');
+const queries = require('./queries');
+//PUT MUTATIONS HERE
+
+
+const QueryType = new GraphQLObjectType({
+    name: 'QueryType',
+    description: 'Queries',
+    fields: queries
+})
+
+module.exports = new GraphQLSchema({
+    query: QueryType
+})
